@@ -1,0 +1,7 @@
+{
+  "migration": {
+    "inputFolder": "../files/",
+    "metaFileFormat": "toml",
+    "dataFileFormat": "doc"
+  }
+}

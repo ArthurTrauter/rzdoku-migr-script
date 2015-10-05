@@ -1,0 +1,15 @@
+{
+  "logging": {
+    "appenders": [{
+      "type": "console"
+    }],
+    "levels": {
+      "[all]": "info"
+    }
+  },
+  "migration": {
+    "inputFolder": "../files/",
+    "metaFileFormat": "toml",
+    "dataFileFormat": "doc"
+  }
+}
