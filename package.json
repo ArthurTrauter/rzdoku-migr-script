@@ -1,7 +1,7 @@
 {
   "name": "rzdoku-migr-script",
   "version": "0.0.0",
-  "description": "script to upload rzdoku-documents to new rzdoku-application",
+  "description": "upload rzdoku-documents to new rzdoku-application",
   "homepage": "http://git.mannheimer.loc/itest/rzdoku-migr-script",
   "repository": "IMD Gmbh/rzdoku-migr-script",
   "author": {
