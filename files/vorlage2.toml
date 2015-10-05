@@ -1,4 +1,4 @@
-name = "dokumentname"
+name = "vorlage2"
 entladedatum = '2015-08-TT'
 rcsstatus = 'Archiviert'
 
@@ -7,9 +7,9 @@ rcsstatus = 'Archiviert'
   [version.aktuell]
   v = 0.0
   letzetesCheckinVon = 'trautear'
-  beschreibung = '''Notiz zur Version. Darf �ber mehrere Zeilen gehen'''
+  beschreibung = '''Notiz zur Version. Darf über mehrere Zeilen gehen'''
 
   [version.produktiv]
   v = 0.0
   letzetesCheckinVon = 'trautear'
-  beschreibung = '''Notiz zur Version. Darf �ber mehrere Zeilen gehen'''
+  beschreibung = '''Notiz zur Version. Darf über mehrere Zeilen gehen'''
