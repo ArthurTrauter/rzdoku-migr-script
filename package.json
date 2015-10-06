@@ -27,12 +27,11 @@
     "gulp-jshint": "^1.5.3",
     "gulp-mocha": "^2.0.0",
     "gulp-plumber": "^1.0.0",
-    "gulp-nsp": "^0.4.5",
-    "jshint-stylish": "^1.0.0"
+    "jshint-stylish": "^1.0.0",
+    "underscore": "^1.8.3"
   },
   "scripts": {
     "start": "lib/index.js",
-    "prepublish": "gulp prepublish",
     "test": "gulp"
   },
   "license": "MIT",
