@@ -11,5 +11,16 @@
     "inputFolder": "../files/",
     "metaFileFormat": "toml",
     "dataFileFormat": "doc"
+  },
+  "targetSystem": {
+    "urls": {
+      "base": "http://localhost:8080/api",
+      "orders": "/orders",
+      "documents": "/documents",
+      "login": "/login"
+    },
+    "username": "test",
+    "password": "test",
+    "port": 8080
   }
 }
