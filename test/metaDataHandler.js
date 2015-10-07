@@ -20,12 +20,12 @@ describe('meta-data-handler', function() {
         aktuell: {
           v: 0,
           letzetesCheckinVon: 'trautear',
-          beschreibung: 'Notiz zur Version. Darf über mehrere Zeilen gehen'
+          beschreibung: 'Notiz zur versions. Darf über mehrere Zeilen gehen'
         },
         produktiv: {
           v: 0,
           letzetesCheckinVon: 'trautear',
-          beschreibung: 'Notiz zur Version. Darf über mehrere Zeilen gehen'
+          beschreibung: 'Notiz zur versions. Darf über mehrere Zeilen gehen'
         }
       }
     };
@@ -64,8 +64,7 @@ describe('meta-data-handler', function() {
     metaDataObject.name = "";
     metaDataObject.validate()
       .then(function(_mDObject) {
-        expect(_mDObject).toNotExist();
-        done('--- validation-error.name' + _mDObject.name);
+        done('--- validation-error.name: ' + _mDObject.name);
       })
       .catch(function(err) {
         expect(err).toExist();
@@ -74,8 +73,7 @@ describe('meta-data-handler', function() {
     metaDataObject.name = null;
     metaDataObject.validate()
       .then(function(_mDObject) {
-        expect(_mDObject).toNotExist();
-        done('--- validation-error.name' + _mDObject.name);
+        done('--- validation-error.name: ' + _mDObject.name);
       })
       .catch(function(err) {
         expect(err).toExist();
@@ -84,8 +82,7 @@ describe('meta-data-handler', function() {
     metaDataObject.name = undefined;
     metaDataObject.validate()
       .then(function(_mDObject) {
-        expect(_mDObject).toNotExist();
-        done('--- validation-error.name' + _mDObject.name);
+        done('--- validation-error.name: ' + _mDObject.name);
       })
       .catch(function(err) {
         expect(err).toExist();
@@ -96,6 +93,224 @@ describe('meta-data-handler', function() {
     }, 100);
 
   });
+
+
+
+  it(' -  should reject promise when status is empty', function(done) {
+
+    metaDataObject.rcsstatus = null;
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.rcsstatus: ' + _mDObject.rcsstatus);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    metaDataObject.rcsstatus = undefined;
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.rcsstatus: ' + _mDObject.rcsstatus);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    metaDataObject.rcsstatus = "";
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.rcsstatus: ' + _mDObject.rcsstatus);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    setTimeout(function() {
+      done();
+    }, 100);
+
+  });
+
+
+
+  it(' -  should reject promise when versions is empty', function(done) {
+
+    metaDataObject.versions = null;
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.version: ' + _mDObject.version);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    metaDataObject.versions = undefined;
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.version: ' + _mDObject.version);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    metaDataObject.versions = "";
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.version: ' + _mDObject.version);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    setTimeout(function() {
+      done();
+    }, 100);
+
+  });
+
+
+
+  it(' -  should reject promise when versions is not an array', function(
+    done) {
+
+    // metaDataObject.versions = "String";
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.version: ' + _mDObject.version);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    setTimeout(function() {
+      done();
+    }, 100);
+
+  });
+
+
+
+  it.skip(' -  should reject promise when versions.v is empty', function(
+    done) {
+
+    metaDataObject.versions.v = null;
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.versions.v: ' + _mDObject.version
+          .v);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    metaDataObject.versions.v = undefined;
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.versions.v: ' + _mDObject.version
+          .v);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    metaDataObject.versions.v = "";
+    metaDataObject.validate()
+      .then(function(_mDObject) {
+        done('--- validation-error.versions.v: ' + _mDObject.version
+          .v);
+      })
+      .catch(function(err) {
+        expect(err).toExist();
+      });
+
+    setTimeout(function() {
+      done();
+    }, 100);
+
+  });
+
+
+
+  it.skip(
+    ' -  should reject promise when versions.letzetesCheckinVon is empty',
+    function(done) {
+
+      metaDataObject.versions.letzetesCheckinVon = null;
+      metaDataObject.validate()
+        .then(function(_mDObject) {
+          done('--- validation-error.versions.letzetesCheckinVon: ' +
+            _mDObject.versions.letzetesCheckinVon);
+        })
+        .catch(function(err) {
+          expect(err).toExist();
+        });
+
+      metaDataObject.versions.letzetesCheckinVon = undefined;
+      metaDataObject.validate()
+        .then(function(_mDObject) {
+          done('--- validation-error.versions.letzetesCheckinVon: ' +
+            _mDObject.versions.letzetesCheckinVon);
+        })
+        .catch(function(err) {
+          expect(err).toExist();
+        });
+
+      metaDataObject.versions.letzetesCheckinVon = "";
+      metaDataObject.validate()
+        .then(function(_mDObject) {
+          done('--- validation-error.versions.letzetesCheckinVon: ' +
+            _mDObject.versions.letzetesCheckinVon);
+        })
+        .catch(function(err) {
+          expect(err).toExist();
+        });
+
+      setTimeout(function() {
+        done();
+      }, 100);
+
+    });
+
+
+
+  it.skip(' -  should reject promise when versions.beschreibung is empty',
+    function(done) {
+
+      metaDataObject.versions.beschreibung = null;
+      metaDataObject.validate()
+        .then(function(_mDObject) {
+          done('--- validation-error.versions.beschreibung: ' +
+            _mDObject.versions.beschreibung);
+        })
+        .catch(function(err) {
+          expect(err).toExist();
+        });
+
+      metaDataObject.versions.beschreibung = undefined;
+      metaDataObject.validate()
+        .then(function(_mDObject) {
+          done('--- validation-error.versions.beschreibung: ' +
+            _mDObject.versions.beschreibung);
+        })
+        .catch(function(err) {
+          expect(err).toExist();
+        });
+
+      metaDataObject.versions.beschreibung = "";
+      metaDataObject.validate()
+        .then(function(_mDObject) {
+          done('--- validation-error.versions.beschreibung: ' +
+            _mDObject.versions.beschreibung);
+        })
+        .catch(function(err) {
+          expect(err).toExist();
+        });
+
+      setTimeout(function() {
+        done();
+      }, 100);
+
+    });
 
 
 
